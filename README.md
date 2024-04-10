@@ -72,4 +72,4 @@ npm run serve
 - [Express](https://expressjs.com/) - Server Framework
 - [VueJs](https://vuejs.org/) - Web Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
-
+- [JWT](https://www.npmjs.com/package/jsonwebtoken) - Authentication Tokens
