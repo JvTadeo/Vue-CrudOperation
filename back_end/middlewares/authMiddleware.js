@@ -10,13 +10,13 @@ export const authMiddleware = (req, res, next) => {
     }
         
     try{
+        const token = authHeader.split(" ")[1];
 
-        const decoded = authHeader.split(" ")[1];        
+        const decoded = verifyToken(token);
         
         req.user = decoded;
         console.log("Open");
         next();
-        
     }catch(err){
         return res.status(401).send({error: 'Invalid or expired token'});
     }
