@@ -104,6 +104,7 @@
                     const req = await fetch("http://localhost:8800/updateClient", {
                     method: "PUT",
                     headers: {
+                        'Authorization': `Bearer ${localStorage.getItem("token")}`,
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify(formData),

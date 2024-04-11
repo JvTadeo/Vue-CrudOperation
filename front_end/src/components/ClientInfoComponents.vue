@@ -91,6 +91,7 @@
                     const req = await fetch(`http://localhost:8800/deleteClient/${id}`, {
                     method: "DELETE",
                     headers: {
+                        'Authorization': `Bearer ${localStorage.getItem("token")}`,
                         "Content-Type": "application/json",
                     },
                     });

@@ -58,7 +58,8 @@
                     const req = await fetch(`http://localhost:8800/getUser/${this.userID}`, {
                         method: "GET",
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Authorization': `Bearer ${localStorage.getItem("token")}`,
+                            'Content-Type': 'application/json'                            
                         }
                     });
             
@@ -91,6 +92,7 @@
                     {
                         method: "GET",
                         headers: {
+                        'Authorization': `Bearer ${localStorage.getItem("token")}`,
                         "Content-Type": "application/json",
                         },
                     }

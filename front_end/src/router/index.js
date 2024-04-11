@@ -49,12 +49,14 @@ router.beforeEach(async (to, from, next) => {
           'Authorization': `Bearer ${isAuthenticated}`
         },
       });
-  
+      
+      const data = await res.json();
+
       if (res.ok) {
         const userID = to.params.userID;
 
-        const currentUserId = await getCurrentUserID();
-              
+        const currentUserId = data.userID;          
+
         if(userID == currentUserId){
           next();
         }else{
@@ -72,30 +74,6 @@ router.beforeEach(async (to, from, next) => {
     next({ name: 'login'});
   }    
 });
-
-async function getCurrentUserID(){
-  try{
-    const isAuthenticated = localStorage.getItem("token");
-
-    const res = await fetch('http://localhost:8800/verifyToken', {
-      method: "GET",
-      headers: {
-        'Authorization': `Bearer ${isAuthenticated}`
-      },
-    });
-
-    const data = await res.json();    
-
-    if(res.ok){            
-      return data.userID;
-    }else{
-      return 0;
-    }
-
-  }catch(error){
-    console.error(error);
-  }
-}
 
 
 export default router
