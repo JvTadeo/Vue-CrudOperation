@@ -96,13 +96,14 @@
                     });
 
                     if (req.ok) {
-                    this.handleCancelClick();
-                    this.$emit("registerSuccess");
-                    this.errorMessage = "";
-                    this.showErrorMessage = false;
+                        this.handleCancelClick();
+                        this.$emit("registerSuccess");
+                        this.errorMessage = "";
+                        this.showErrorMessage = false;
                     }
                 } catch (error) {
                     console.log(error);
+                    this.$router.push({ name: "login" });
                 }
             }
         },  

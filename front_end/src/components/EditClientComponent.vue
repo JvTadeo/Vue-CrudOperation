@@ -111,14 +111,15 @@
                     });
 
                     if (req.ok) {
-                    this.$emit("updateInformation");
-                    this.$emit("closeModal");
+                        this.$emit("updateInformation");
+                        this.$emit("closeModal");
 
-                    this.errorMessage = "";
-                    this.showErrorMessage = false;
+                        this.errorMessage = "";
+                        this.showErrorMessage = false;
                     }
                 } catch (error) {
                     console.log(error);
+                    this.$router.push({ name: "login" });
                 }
             },
         },  

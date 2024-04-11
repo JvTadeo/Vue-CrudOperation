@@ -97,11 +97,12 @@
                     });
 
                     if (req.ok) {
-                    this.handleDeleteCancel();
-                    this.updateInformation();
+                        this.handleDeleteCancel();
+                        this.updateInformation();
                     }
                 } catch (error) {
                     console.log(error);
+                    this.$router.push({ name: "login" });
                 }
             },
             updateInformation(){

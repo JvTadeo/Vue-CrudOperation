@@ -74,6 +74,7 @@
                     }
                 } catch (error) {
                     console.log("Erro: ", error);
+                    this.$router.push({ name: "login" });
                 }
             },                
             async getAllClients() {
@@ -100,10 +101,11 @@
 
                     const data = await req.json();
                     if (req.ok) {
-                    this.clientsData = data.clients;
+                        this.clientsData = data.clients;
                     }
                 } catch (error) {
                     console.log("Erro: ", error);
+                    this.$router.push({ name: "login" });
                 }
             },
         },
