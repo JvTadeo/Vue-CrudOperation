@@ -100,6 +100,13 @@
                         this.$emit("registerSuccess");
                         this.errorMessage = "";
                         this.showErrorMessage = false;
+
+                        //Clear all the inputs
+                        this.username = "";
+                        this.phoneNumber = "";
+                        this.email = "";
+                        this.address = "";
+                        this.postalcode = "";
                     }
                 } catch (error) {
                     console.log(error);
