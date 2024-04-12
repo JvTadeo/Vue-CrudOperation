@@ -102,7 +102,7 @@
                     }
                 } catch (error) {
                     console.log(error);
-                    this.$router.push({ name: "login" });
+                    this.$router.push({ name: "login" });                    
                 }
             },
             updateInformation(){

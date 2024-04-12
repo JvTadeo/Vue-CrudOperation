@@ -74,7 +74,6 @@
                     }            
                 }catch(error){
                     console.log("Erro: ", error.message);
-
                 }                           
             }, 
             handleInput(newValue){         
