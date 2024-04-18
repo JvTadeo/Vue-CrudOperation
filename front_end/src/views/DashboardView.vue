@@ -45,7 +45,7 @@
                 localStorage.setItem("token", "");
                 this.$router.push({ name: "login" });
             },             
-            async getUserDate() {
+            async getUserData() {
                 /*
                 * Fetches the user data from the server and updates the component's data properties.
                 *
@@ -71,6 +71,7 @@
                     } else {
                         this.usernameData = " ";
                         this.accessLevelData = " ";
+                        this.$router.push({ name: "login" });
                     }
                 } catch (error) {
                     console.log("Erro: ", error);
@@ -110,7 +111,7 @@
             },
         },
         mounted(){
-            this.getUserDate();
+            this.getUserData();
         }
     }   
 </script>
