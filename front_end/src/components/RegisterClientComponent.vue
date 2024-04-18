@@ -38,7 +38,7 @@
     export default {
         components: { InputComponent, ErrorMessageComponent },
         name: "RegisterClient",
-        props: ['levelaccess'],
+        props: ['levelAccess'],
         data(){
             return{
                 username: "",
@@ -66,7 +66,7 @@
                     email: this.email,
                     address: this.address,
                     postalCode: this.postalcode,
-                    accesslevel: this.levelaccess
+                    accesslevel: this.levelAccess
                 }
 
                 /**

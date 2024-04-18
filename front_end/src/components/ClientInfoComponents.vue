@@ -46,7 +46,7 @@
             <EditClientComponent @closeModal="handleEditCancel" :clientObject="clientObject" @updateInformation="updateInformation"/>
         </div>
         <div v-show="showDeleteModal">
-            <DeleteClientComponent :username="clientObject.name" @closeModal="handleDeleteCancel" @emitDeleteClient="handleSendDelte"/>
+            <DeleteClientComponent :username="clientObject.name" @closeModal="handleDeleteCancel" @emitDeleteClient="handleDeleteClient"/>
         </div>
     </div>
 </template>
@@ -67,9 +67,7 @@
             }                
         },
         methods: {
-            showMoreInformationClick(e){
-                e.preventDefault();
-                
+            showMoreInformationClick(){        
                 this.showMoreInformation = !this.showMoreInformation;
             },
             handleEditCancel(){
@@ -78,7 +76,7 @@
             handleDeleteCancel(){
                 this.showDeleteModal = !this.showDeleteModal;
             },
-            async handleSendDelte() {
+            async handleDeleteClient() {
                 /*
                 * Handles the deletion of a client by sending a DELETE request to the server.
                 *

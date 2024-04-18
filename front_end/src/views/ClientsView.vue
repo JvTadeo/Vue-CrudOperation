@@ -16,7 +16,7 @@
             <ClientInfoComponents v-for="client in filteredClients" :key="client.id" :clientObject="client" @updateClientsView="updateClients"/>                  
         </div>
         <div v-show="showAddClientModal">
-            <RegisterClientComponent @cancelRegister="handleShowRegisterClient" :levelaccess="accessLevel" @registerSuccess="updateClients"/>
+            <RegisterClientComponent @cancelRegister="handleShowRegisterClient" :levelAccess="accessLevel" @registerSuccess="updateClients"/>
         </div>
     </div>
 </template>
