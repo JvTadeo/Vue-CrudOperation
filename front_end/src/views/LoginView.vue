@@ -47,20 +47,20 @@
                 }
 
                 try{
-                    const req = await fetch(`http://localhost:8800/login/${this.username}`, {
+                    const res = await fetch(`http://localhost:8800/login/${this.username}`, {
                         method: 'GET',
                         headers:{
                             'Content-Type': 'application/json'
                         },
                     });                  
 
-                    const data = await req.json();
+                    const data = await res.json();
                                     
                     /**
                      * Handles the successful login response by storing the user's token in localStorage and navigating to the dashboard page with the user's ID.
                      * This code is executed after a successful login request is made to the server.
                      */
-                    if (req.ok) {
+                    if (res.ok) {
                         localStorage.setItem("token", data.token);
 
                         const id = data.user.id;

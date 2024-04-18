@@ -55,7 +55,7 @@
                 * method to fetch the client data.
                 */
                 try {
-                    const req = await fetch(`http://localhost:8800/getUser/${this.userID}`, {
+                    const res = await fetch(`http://localhost:8800/getUser/${this.userID}`, {
                         method: "GET",
                         headers: {
                             'Authorization': `Bearer ${localStorage.getItem("token")}`,
@@ -63,8 +63,8 @@
                         }
                     });
             
-                    const data = await req.json();
-                    if (req.ok) {
+                    const data = await res.json();
+                    if (res.ok) {
                         this.usernameData = data.user.username;
                         this.accessLevelData = data.user.access_level;
                         this.getAllClients();
@@ -89,7 +89,7 @@
                 * the fetched client data.
                 */
                 try {
-                    const req = await fetch(
+                    const res = await fetch(
                     `http://localhost:8800/getAllClients/${this.accessLevelData}`,
                     {
                         method: "GET",
@@ -100,8 +100,8 @@
                     }
                     );
 
-                    const data = await req.json();
-                    if (req.ok) {
+                    const data = await res.json();
+                    if (res.ok) {
                         this.clientsData = data.clients;
                     }
                 } catch (error) {

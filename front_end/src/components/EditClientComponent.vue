@@ -101,7 +101,7 @@
                  * If the request fails, logs the error to the console.
                  */
                 try {
-                    const req = await fetch("http://localhost:8800/updateClient", {
+                    const res = await fetch("http://localhost:8800/updateClient", {
                     method: "PUT",
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem("token")}`,
@@ -110,7 +110,7 @@
                     body: JSON.stringify(formData),
                     });
 
-                    if (req.ok) {
+                    if (res.ok) {
                         this.$emit("updateInformation");
                         this.$emit("closeModal");
 

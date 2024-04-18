@@ -86,7 +86,7 @@
                 const id = this.clientObject.id;
 
                 try {
-                    const req = await fetch(`http://localhost:8800/deleteClient/${id}`, {
+                    const res = await fetch(`http://localhost:8800/deleteClient/${id}`, {
                     method: "DELETE",
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem("token")}`,
@@ -94,7 +94,7 @@
                     },
                     });
 
-                    if (req.ok) {
+                    if (res.ok) {
                         this.handleDeleteCancel();
                         this.updateInformation();
                     }

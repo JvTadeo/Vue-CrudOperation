@@ -86,7 +86,7 @@
                  * If the request fails, logs the error to the console.
                  */
                 try {
-                    const req = await fetch("http://localhost:8800/registerClient", {
+                    const res = await fetch("http://localhost:8800/registerClient", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -95,7 +95,7 @@
                     body: JSON.stringify(newClient),
                     });
 
-                    if (req.ok) {
+                    if (res.ok) {
                         this.handleCancelClick();
                         this.$emit("registerSuccess");
                         this.errorMessage = "";
